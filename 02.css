@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrap{
+    width: 100%;
+    display: flex;
+}
+
+.item{
+    width: 25%;
+    position: relative;
+}
+.item img{
+    width: 100%;
+    vertical-align: middle;
+}
+.item .txt{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color:rgba(0,0,0,.6) ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    opacity: 0;
+    /* 文字沒摸到時為透明 */
+    transition:opacity .5s;
+    /* 動畫，透明度 */
+}
+.item:hover .txt{
+    opacity: 1;
+    /* 觸碰時，顯示文字 */
+}
+.item  h2{
+    font-size: 32px;
+    color: #ff0;
+    font-weight: 500;
+   
+}
+
+
+/* 線條出現動畫 */
+.item  h2:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    margin: 10px 0;
+    background-color: #ff0;
+    transition: width .5s .5s;
+    /* 動畫出現時，.5秒，延遲.5秒 */
+}
+/* 碰觸時出現效果 */
+.item:hover  h2:after{
+    width: 100%;
+    
+}
+
+.item p{
+    font-size: 20px;
+    color: aliceblue;
+    font-weight: 100;
+}
